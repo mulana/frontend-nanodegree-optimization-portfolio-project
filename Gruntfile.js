@@ -27,20 +27,20 @@ module.exports = function(grunt) {
       }
     },
     // //Minify HTML files
-    // htmlmin: {
-    //   dest: {
-    //     options: {
-    //       removeComments: true,
-    //       collapseWhitespace: true
-    //     },
-    //     files: [{
-    //       expand: true,
-    //       src: ['*.html', 'views/*.html'],
-    //       dest: 'dist/',
-    //       filter: 'isFile'
-    //     }]
-    //   }
-    // },
+    htmlmin: {
+      dest: {
+        options: {
+          removeComments: true,
+          collapseWhitespace: true
+        },
+        files: [{
+          expand: true,
+          src: ['*.html', 'views/*.html'],
+          dest: 'dist/',
+          filter: 'isFile'
+        }]
+      }
+    },
     //Minify images
     imagemin: {
       dist: {
@@ -73,6 +73,6 @@ module.exports = function(grunt) {
     }
   });
   // Default task(s).
-  grunt.registerTask('default', ['uglify', 'cssmin', 'imagemin', 'inlinecss']);
+  grunt.registerTask('default', ['uglify', 'cssmin', 'imagemin', 'inlinecss', 'htmlmin']);
 
 };

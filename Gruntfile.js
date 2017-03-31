@@ -1,46 +1,79 @@
 module.exports = function(grunt) {
-  // Load all plugin that provides.
+  // Load all Grunt plugins
   require('load-grunt-tasks')(grunt);
   // Project configuration.
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
+    //Minify JavaScript files
     uglify: {
       build: {
         src: 'js/perfmatters.js',
-        dest: 'js/perfmatters.min.js'
+        dest: 'dist/js/perfmatters.min.js'
+      },
+      build: {
+        src: 'views/js/main.js',
+        dest: 'dist/views/js/main.min.js'
       }
     },
-    responsive_images: {
-      dev: {
+    //Minify CSS files
+    cssmin: {
+      my_target: {
+        files: {
+          'dist/css/style.min.css': ['css/style.css'],
+          'dist/css/print.min.css': ['css/print.css'],
+          'dist/views/css/bootstrap-grid.min.css': ['views/css/bootstrap-grid.css'],
+          'dist/views/css/style.min.css': ['views/css/style.css']
+        }
+      }
+    },
+    //Minify HTML files
+    htmlmin: {
+      dest: {
         options: {
-          sizes: [{
-            name: 'small',
-            width: 320,
-            height: 240
-            },{
-            name: 'medium',
-            width: 500
-            },{
-            name: 'large',
-            width: 800
-            },{
-            name: "large",
-            width: 1600,
-            separator: "-",
-            suffix: "_x2",
-            quality: 50
-          }]
+          removeComments: true,
+          collapseWhitespace: true
         },
         files: [{
           expand: true,
-          src: ['*.{jpg,gif,png}'],
-          cwd: 'img/',
-          dest: 'src/img'
+          cwd: 'dest/',
+          src: ['*.html', 'views/*.html'],
+          dest: 'dist/',
+          filter: 'isFile'
         }]
       }
+    },
+    //Minify images
+    imagemin: {
+      dist: {
+        options: {
+          optimizeationLevel: 7
+        },
+        files: [{
+          expand: true,
+          cwd: 'img',
+          src: ['*.{png,jpg,gif}'],
+          dest: 'dist/img/'
+        },
+        {
+          expand: true,
+          cwd: 'views/images',
+          src: ['*.{png,jpg,gif}'],
+          dest: 'dist/views/images/'
+        }]
+      }
+    },
+    //Inline CSS into html
+    inlinecss: {
+        main: {
+            options: {
+            },
+            files: {
+                'indexInline.html': 'index.html'
+            }
+        }
     }
   });
   // Default task(s).
-  grunt.registerTask('default', ['uglify', 'responsive_images']);
+  grunt.registerTask('default', ['uglify', 'cssmin', 'imagemin', 'inlinecss', 'htmlmin']);
 
 };

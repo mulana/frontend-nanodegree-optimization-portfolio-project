@@ -1,3 +1,4 @@
+"use strict";
 /*
 Welcome to the 60fps project! Your goal is to make Cam's Pizzeria website run
 jank-free at 60 frames per second.
@@ -423,6 +424,8 @@ var resizePizzas = function(size) {
 
   // Iterates through pizza elements on the page and changes their widths
   function changePizzaSizes(size) {
+    var newwidth;
+    // Changes the slider value to a percent width
     switch(size) {
       case "1":
         newwidth = 25;

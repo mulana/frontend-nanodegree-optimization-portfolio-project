@@ -492,14 +492,17 @@ function updatePositions() {
   window.performance.mark("mark_start_frame");
 
   var items = document.querySelectorAll('.mover');
-  
+
+  // precalculate phases since there are only 5 distinct values
   var phases = [];
   for(var i = 0; i < 5; i++) {
     phases.push(Math.sin((document.body.scrollTop / 1250) + i));
   }
   for (var i = 0; i < items.length; i++) {
     //var phase = Math.sin((document.body.scrollTop / 1250) + (i % 5));
-    items[i].style.left = items[i].basicLeft + 100 * phases[i % 5] + 'px';
+    //items[i].style.left = items[i].basicLeft + 100 * phases[i % 5] + 'px';
+    var translateX = items[i].basicLeft + 100 * phases[i % 5] + 'px';
+    items[i].style.transform = "translateX(" + translateX + ") translateZ(0)";
   }
 
   // User Timing API to the rescue again. Seriously, it's worth learning.

@@ -26,21 +26,6 @@ module.exports = function(grunt) {
         }
       }
     },
-    // //Minify HTML files
-    htmlmin: {
-      dest: {
-        options: {
-          removeComments: true,
-          collapseWhitespace: true
-        },
-        files: [{
-          expand: true,
-          src: ['*.html', 'views/*.html'],
-          dest: 'dist/',
-          filter: 'isFile'
-        }]
-      }
-    },
     //Minify images
     imagemin: {
       dist: {
@@ -64,16 +49,14 @@ module.exports = function(grunt) {
     //Inline CSS into html
     inlinecss: {
         main: {
-            options: {
-            },
             files: {
                 'dist/index.html': 'index.html',
-                'dist/views/pizza.html': 'views/pizza.html'
+                // 'dist/views/pizza.html': 'views/pizza.html'
             }
         }
     }
   });
   // Default task(s).
-  grunt.registerTask('default', ['uglify', 'cssmin', 'inlinecss', 'htmlmin']);
+  grunt.registerTask('default', ['uglify', 'cssmin', 'inlinecss']);
 
 };

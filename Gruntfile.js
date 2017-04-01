@@ -19,10 +19,10 @@ module.exports = function(grunt) {
     cssmin: {
       my_target: {
         files: {
-          'css/style.min.css': ['css/style.css'],
-          'css/print.min.css': ['css/print.css'],
-          'views/css/bootstrap-grid.min.css': ['views/css/bootstrap-grid.css'],
-          'views/css/style.min.css': ['views/css/style.css']
+          'dist/css/style.min.css': ['css/style.css'],
+          'dist/css/print.min.css': ['css/print.css'],
+          'dist/views/css/bootstrap-grid.min.css': ['views/css/bootstrap-grid.css'],
+          'dist/views/css/style.min.css': ['views/css/style.css']
         }
       }
     },
@@ -67,12 +67,13 @@ module.exports = function(grunt) {
             options: {
             },
             files: {
-                'dist/index.html': 'index.html'
+                'dist/index.html': 'index.html',
+                'dist/views/pizza.html': 'views/pizza.html'
             }
         }
     }
   });
   // Default task(s).
-  grunt.registerTask('default', ['uglify', 'cssmin', 'imagemin', 'inlinecss', 'htmlmin']);
+  grunt.registerTask('default', ['uglify', 'cssmin', 'inlinecss', 'htmlmin']);
 
 };

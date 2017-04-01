@@ -6,13 +6,11 @@ module.exports = function(grunt) {
     pkg: grunt.file.readJSON('package.json'),
     //Minify JavaScript files
     uglify: {
-      build: {
-        src: 'js/perfmatters.js',
-        dest: 'dist/js/perfmatters.min.js'
-      },
-      build: {
-        src: 'views/js/main.js',
-        dest: 'dist/views/js/main.min.js'
+      my_target: {
+        files: {
+          'dist/js/perfmatters.min.js': ['js/perfmatters.js'],
+          'dist/views/js/main.min.js': ['views/js/main.js']
+        }
       }
     },
     //Minify CSS files
@@ -54,9 +52,25 @@ module.exports = function(grunt) {
                 // 'dist/views/pizza.html': 'views/pizza.html'
             }
         }
+    },
+    //Minify html document
+    htmlmin: {
+      dist: {
+        options: {
+          removeComments: true,
+          collapseWhitespace: true
+        },
+        files: {
+          // 'dist/index.html': 'index.html',
+          'dist/project-2048.html': 'project-2048.html',
+          'dist/project-mobile.html': 'project-mobile.html',
+          'dist/project-webperf.html': 'project-webperf.html',
+          'dist/views/pizza.html': 'views/pizza.html',
+        }
+      },
     }
   });
   // Default task(s).
-  grunt.registerTask('default', ['uglify', 'cssmin', 'inlinecss']);
+  grunt.registerTask('default', ['uglify', 'cssmin', 'inlinecss', 'htmlmin']);
 
 };

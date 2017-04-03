@@ -440,7 +440,7 @@ var resizePizzas = function(size) {
       default:
         console.log("bug in sizeSwitcher");
     }
-    var randomPizzas = document.querySelectorAll(".randomPizzaContainer");
+    var randomPizzas = document.getElementsByClassName("randomPizzaContainer");
     for (var i = 0; i < randomPizzas.length; i++) {
       randomPizzas[i].style.width = newwidth + "%";
     }
@@ -501,7 +501,7 @@ function updatePositions() {
   frame++;
   window.performance.mark("mark_start_frame");
 
-  var items = document.querySelectorAll('.mover');
+  var items = document.getElementsByClassName('mover');
 
   // precalculate phases since there are only 5 distinct values
   var phases = precalculatePhases();
@@ -530,8 +530,12 @@ document.addEventListener('DOMContentLoaded', function() {
   var cols = 8;
   var s = 256;
   var phases = precalculatePhases();
-  for (var i = 0; i < 200; i++) {
-    var elem = document.createElement('img');
+  var nPizzas = (screen.height / s) * 8;
+  var elem;
+  var movingPizzas = document.getElementById("movingPizzas1");
+
+  for (var i = 0; i < nPizzas; i++) {
+    elem = document.createElement('img');
     elem.className = 'mover';
     elem.src = "images/pizza-small.png";
     elem.style.height = "100px";
@@ -539,7 +543,7 @@ document.addEventListener('DOMContentLoaded', function() {
     elem.basicLeft = (i % cols) * s;
     elem.style.left = elem.basicLeft + phases[i % 5] + 'px';
     elem.style.top = (Math.floor(i / cols) * s) + 'px';
-    document.querySelector("#movingPizzas1").appendChild(elem);
+    movingPizzas.appendChild(elem);
   }
   // We have already set basic style.left position so we do not need to call this on start
   //updatePositions();

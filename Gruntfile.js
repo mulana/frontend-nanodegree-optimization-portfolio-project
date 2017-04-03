@@ -8,8 +8,8 @@ module.exports = function(grunt) {
     uglify: {
       my_target: {
         files: {
-          'dist/js/perfmatters.min.js': ['js/perfmatters.js'],
-          'dist/views/js/main.min.js': ['views/js/main.js']
+          'dist/js/perfmatters.js': ['js/perfmatters.js'],
+          'dist/views/js/main.js': ['views/js/main.js']
         }
       }
     },
@@ -17,10 +17,10 @@ module.exports = function(grunt) {
     cssmin: {
       my_target: {
         files: {
-          'dist/css/style.min.css': ['css/style.css'],
-          'dist/css/print.min.css': ['css/print.css'],
-          'dist/views/css/bootstrap-grid.min.css': ['views/css/bootstrap-grid.css'],
-          'dist/views/css/style.min.css': ['views/css/style.css']
+          'dist/css/style.css': ['css/style.css'],
+          'dist/css/print.css': ['css/print.css'],
+          'dist/views/css/bootstrap-grid.css': ['views/css/bootstrap-grid.css'],
+          'dist/views/css/style.css': ['views/css/style.css']
         }
       }
     },
@@ -49,7 +49,7 @@ module.exports = function(grunt) {
         main: {
             files: {
                 'dist/index.html': 'index.html',
-                // 'dist/views/pizza.html': 'views/pizza.html'
+                'dist/views/pizza.html': 'views/pizza.html'
             }
         }
     },

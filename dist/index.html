@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" style="font-size: 100%; overflow-y: scroll; -webkit-tap-highlight-color: transparent; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: none;">
+<html lang="en" style="font-size: 100%; overflow-y: scroll; -webkit-tap-highlight-color: rgba(0,0,0,0); -ms-text-size-adjust: 100%; -webkit-text-size-adjust: none;">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -7,7 +7,7 @@
     <meta name="author" content=" FILL ME IN ">
     <title>Cameron Pittman: Portfolio</title>
     <style>
-@media only screen and (max-width:480px) {
+@media only screen and (max-width: 480px) {
   body {
     font-size: 12px;
   }
@@ -20,16 +20,16 @@
     <style media="print">
 @media print {
   * {
-    background: 0 0!important;
-    color: #000!important;
-    text-shadow: none!important;
-    filter: none!important;
-    -ms-filter: none!important;
+    background: transparent !important;
+    color: black !important;
+    text-shadow: none !important;
+    filter: none !important;
+    -ms-filter: none !important;
   }
 
   a,
 a:visited {
-    color: #444!important;
+    color: #444 !important;
     text-decoration: underline;
   }
 
@@ -37,22 +37,22 @@ a:visited {
     content: " (" attr(href) ")";
   }
 
-  img,
-tr {
+  tr,
+img {
     page-break-inside: avoid;
   }
 
   img {
-    max-width: 100%!important;
+    max-width: 100% !important;
   }
 
   @page {
-    margin: .5cm;
+    margin: 0.5cm;
   }
 
-  h2,
-h3,
-p {
+  p,
+h2,
+h3 {
     orphans: 3;
     widows: 3;
   }
@@ -65,46 +65,46 @@ h3 {
 </style>
   </head>
 
-  <body style="margin: 0; font-size: 14px; line-height: 1.61; font-weight: 400; font-family: 'Open Sans',sans-serif; color: #333; background: #fff;">
-    <header style="max-width: 45em; margin: 0 auto; padding: 0 .5em; color: #c90b0b;">
-      <a href="/" style="color: #12c;"><img src="data:image/jpeg;base64,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" style="border: 0; max-width: 100%; border-radius: 40px; float: left;"></a>
-      <p style="font-size: 1.5em; font-weight: 700; padding-left: 4em;">Cameron Pittman<br><span style="font-size: .8em; font-weight: 400;">Course Developer</span></p>
+  <body style="margin: 0; font-size: 14px; line-height: 1.61; font-weight: 400; font-family: 'Open Sans', sans-serif; color: #333; background: #fff;">
+    <header style="max-width: 45em; margin: 0 auto; padding: 0 0.5em; color: #C90B0B;">
+      <a href="/" style="color: #12C;"><img src="data:image/jpeg;base64,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" style="border: 0; max-width: 100%; border-radius: 40px; float: left;"></a>
+      <p style="font-size: 1.5em; font-weight: bold; padding-left: 4em;">Cameron Pittman<br><span style="font-size: 0.8em; font-weight: normal;">Course Developer</span></p>
     </header>
 
     <div class="container" style="max-width: 45em; margin: 0 auto;">
       <div class="hero" style="padding: 2em; background-color: #f8f8f8; font-size: 1.2em; border-bottom: 1px solid #ccc; border-top: 1px solid #ccc;">
-        <strong style="font-weight: 700;">I love web development!</strong> This is a template for a simple portfolio. I decided to use it to showcase a few Udacity courses I've taken and some teaching work, but you can use it to showcase any kind of project that you want the world to see :) <br> Contact me: me@email.com
+        <strong style="font-weight: bold;">I love web development!</strong> This is a template for a simple portfolio. I decided to use it to showcase a few Udacity courses I've taken and some teaching work, but you can use it to showcase any kind of project that you want the world to see :) <br> Contact me: me@email.com
       </div>
 
       <div class="content" style="padding: 1em 1em;">
         <ul style="margin: 1em 0; padding: 0 0 0 20px;">
           <li style="list-style-type: none; font-size: 1.1em;">
             <img src="data:image/jpeg;base64,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" style="border: 0; max-width: 100%; float: left; padding-right: 1em;">
-            <a href="project-2048.html" style="color: #12c;">Build Your Own 2048!</a>
-            <p style="font-size: .9em; font-style: italic;">I made my own version of 2048. How cool is that!?</p>
+            <a href="project-2048.html" style="color: #12C;">Build Your Own 2048!</a>
+            <p style="font-size: 0.9em; font-style: italic;">I made my own version of 2048. How cool is that!?</p>
           </li>
 
           <li style="list-style-type: none; font-size: 1.1em;">
             <img src="data:image/jpeg;base64,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" style="border: 0; max-width: 100%; float: left; padding-right: 1em;">
-            <a href="project-webperf.html" style="color: #12c;">Website Performance Optimization</a>
-            <p style="font-size: .9em; font-style: italic;">Hey... this class looks familiar.</p>
+            <a href="project-webperf.html" style="color: #12C;">Website Performance Optimization</a>
+            <p style="font-size: 0.9em; font-style: italic;">Hey... this class looks familiar.</p>
           </li>
 
           <li style="list-style-type: none; font-size: 1.1em;">
             <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAUDBAQEAwUEBAQFBQUGBwwIBwcHBw8LCwkMEQ8SEhEPERETFhwXExQaFRERGCEYGh0dHx8fExciJCIeJBweHx7/2wBDAQUFBQcGBw4ICA4eFBEUHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh7/wAARCAA9AGQDASIAAhEBAxEB/8QAHAABAQACAwEBAAAAAAAAAAAACAcACQQFBgMC/8QAQRAAAQMCBAIIAwMJCAMAAAAAAQIDBAURAAYSIQcxCBMUIkFRYXEjgbEVMnMkNEJSYnKRocJDRWOCg5KUssHS8f/EABgBAAMBAQAAAAAAAAAAAAAAAAIDBAAB/8QAIxEAAgIBBAICAwAAAAAAAAAAAAECAxEEITFREhMUUkGRwf/aAAwDAQACEQMRAD8AXGaK1Dy7l2oV6olzscCOuQ91adStCQSbDx2GIxK6VXDlnZunZkeP7MVofV0Y5fHbM1QqTdUynRnfyd2G7Dld0WWtxBCgSQe6AQNvEnyGCDEyBmGXN6pxymw9V+89KFk2530BWFK6DbWeCh6W3xi0uRQvdLbJwNmMsZgX+J1Cfo4cdfK6XNLT+a5JmL/EqCEfRCsECc2Y0+RGLrL3UOqb61lWpC9KiNSVWFwbbH1GPmHVp5HDSd7C0c6W8tz83yLHR+JVCfo0MI/IldGZ8mUbMQY7OajCakqa1ag2VIBKQbb2JIvtyxrFhvqJso42D9GKodr4CZbkrKvgsvsq8TZp9xH0SMYx6/PGZYWVqE7Upakkp2bb1WKj4/IDf/7iKKrlYz3mGlx1hxmPPkKajuadkaQSs28wAdtuRxMelBxErtRz5LojTUimxIQS23qUCpaSAQtJAASFXve5O3MWsPXdECDnKnreRIo6l0pUhElPaPhqjlaShTqdQ31J8BY7epxLZFzabexdRZGqLUVv+X/BA5eyHlujhDiIfbJKd+vlfEVfzAOwPqBjszmOgpzGnLhq0T7XU11qYfWDrNPt7b25235Y/dfrVGokZpys1aLTWpC+pbckPJaCllJNgT42BPywO+KOS5WVKquuUTMLdepjj3Wt1KPMS7IacJuOtUkkhV/0xsfQ7YpjFRWERylKbzJjUddbbF3HEp/eVbHHdqdOaHxZ8Vv955I+pwOoOcauxBZnVupyqrOeRqZaU4XdCSNlq5947+QH73L0mX4OfM3LQabRJkZpSbqfkN9Wj17ytvlz9MJdss4SK1pYqKlKQkXc25ZaXoXXqeFD/HB+mMxBl8L+IIVZVLbdP6yZjVv5kYzA+dvRvTT9ic1fN6ny9GhlTy3LlTqlHvEnck8yd+eIRmB2c9WJyZAeZV1q23GFKUNBSdJSUnx25e+NleV8h5Sy200KVQ4aHW7WkONhb1x46zuPYWGBzxc4SZ5lcWczv0bKdVkw5NReksvtxz1aw6ouXSrkd1H+GDqpVYOo1Lu2Ia2yoixGPqI6iNxiqx+BfFh7dvJcz/M8w3/2cGOzjdHLi0+fiUCPG/GqDH9KlYcSYIwhvQdjh3dDGX2ngmyzf81qEhr5khz+vELjdFriU4buOUFn8Scv+ls4RvRu4e1vhvk2dRq3LgyXZNQVLb7G4tSUJLTaLEqSnfueWMY9DM4cZPqGZkZhqVGjzJ7LSmmVPDUEJJv93kSCTYncXNsenp0OJT4aIcGM1Gjt7IabSEpF/ID+PzxysZjiilwdy2SzjzkfMOclUZyjyKaiPTuvW81McUnWpYSEkEJUNgFc7fewd83URWWStyrSqH8M97s9UYWtP+kFaz8k4rXSsyHmjMtVodTy7Bl1JtLS40iM2q6WyFakL0kgb3UCfRPpiN1Dg5xFp9JXUZuW1RoqVfE/KGlFCSDdakoUohI8T4eVr4zwZc7Fa6MuQMuMyZFVlvpn1Jl0SGWkt/AaSokIWlR++qyQbck3HM2OEXga5LqbeS4Mdim115a29XebUQE3NylPmkeR9MVqg8cozUNDNSjdrfSnvOtuaSr3Ta1/UH5YRG6K5LrtLN4cf10XDGYkQ440s/3O9/yB/wCuMwfvh2I+Ld9Su44VXqMKk096oVGS3GisJ1OOOckj/wAk7AAbkkAc8Saq8aUyFoTQYTaEc1KlblXoEpO3vc4mPEnOdXzjMjqmo1xIQCvs1txTSFrNx1lwbk7+fIEDmb8V8G8ZD+FcllordK44ZfdqzzFXgyKXA12jzVK6xOnzdAHw/fvDfnzxV0kEXB254NPCmhZZpLcTMnELMFPXISlL8Ol6g4tondLryEAkr5FKbd3me9bTV6dxdyfUMxQaLEdmrXNc6pl9UfS1rP3QbkKFzYDbxw1E0o9FBxKOkPxUk8MoFGXAp8WdJnvrCm31KAS0hI1EafG6k7++2KLmWpJo+XajVy2p0QojsnSlQBVoSVWudhe2AXxrz7U86v0BurOddIp1PU247pA61a3FEqsAAO4GvmDjje+DiWdxV8COMqeJ0yfAVlxylSITCHnFJkh5tWpVrX0pIOxPLwO+K3g09BiLDjZfrk515lE6oyQ2y0pwdY6zHSkqWlN7lIVIAJ8yPTCMqTz8anSZEWKqZIaZWtthKgkvKAJCAo7C5AFz54JGZ1+ccy0TKNAkVzME9uFCY5qV95avBCUjdSjbYDEX4ZdJGnZp4gu0Kq01uj06asN0l9xy69d7BL29gV7WtsD3bm4ODZxZzxmnPWZHpuZXXGVRlqbZp6bpbh2NlICT+kLd4nvEj0AHjLb4xw2Nu8OcivSHZDuVaWt1xZWpSmQbkm59t/DH4lcMsgyU6F5Wp6Ba3wUFr/qRiLdH/j81KhU7K2cVuLmt/BbqSlX61G2jWOZUNwVeIAO/eOEzgcRYeZpJ5JhJ4HZFdeK0JqcdJ/Qblkgf7gT/ADxmKfjMc9cejvtn2DGu8I+JeVkIL9K+2I6d+tpbinre6bBd/XT88dZSYdXr9MlqEKqRmqSoaqhDZLnZ13Fwo23/AGk+Gx254cOPmEoRulIGtVz7+eFuiLKYa6yKw9wc5BydnjNVSRCclKmat3KhKZeDbKAk2FilIO42APj74seWOBLEGoQZ9ZzNImOxJCJCWocVEdpSkm4CtRWoi48CPliz2xmGxjhE1ljm8kH6XOYqlTaLTKJEfejRKih9UpTY2WlASQkq5gbm49R4YMGXsi1fP1f+z6FMp6KqwyVKamPKa7QlJ3CVBJFxc7G23scJHpsnqMt5ekt7Pdqfb1eGgtFRFvUoTv7+eCE3mCpUuc3Mpsp6HKKVEPMuFKwCCkgEeYJ/icLefM6seIg+i3Bk0DjQmg1N1tEuJBlsuJS8Fo1BwakJINiQQeX6pwwMauMu5prdFzLDrUCe81UIqy42+Fd4XBBG/mCQffGzDKVTVV8r0uqON9WqXEbeUnVexKQbXsL88MisICTTDx0w+GULsi+IVI6mNI1obqTHLtF9kupH64t3h4pF+YNyqQQcbQ5KErYcSrVYpN9KrH5EcvfAM6SeSKVkXPzkKjuPLhvsB9Lb1iW1E7gEWGm+4FtvPHc7mSyiXoeLK0OIUpC0qBTp53B2t6jDx6N3EBzOWRYkesONorsNoIeSVDU82Nku29dtXr7jBipvCuOxkKm5wkVUSDUGw4Ixi26ocratRvy52GOTQJrkGYh6mlyE9F0ltxpwhQNuYI3B+uJbdSoS4KqdN7IPcdeMweqTxxrcOCiPUaXHqD6f7cOFoqHqACL+ot7YzBrVVtcgvR2p8H//2Q==" style="border: 0; max-width: 100%; float: left; padding-right: 1em;">
-            <a href="project-mobile.html" style="color: #12c;">Mobile Web Development</a>
-            <p style="font-size: .9em; font-style: italic;">Making mobile apps isn't so hard after all.</p>
+            <a href="project-mobile.html" style="color: #12C;">Mobile Web Development</a>
+            <p style="font-size: 0.9em; font-style: italic;">Making mobile apps isn't so hard after all.</p>
           </li>
 
           <li style="list-style-type: none; font-size: 1.1em;">
             <img style="border: 0; max-width: 100%; float: left; padding-right: 1em; width: 100px;" src="data:image/jpeg;base64,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" width="100">
-            <a href="views/pizza.html" style="color: #12c;">Cam's Pizzeria</a>
-            <p style="font-size: .9em; font-style: italic;">Who wants a performant pizza?</p>
+            <a href="views/pizza.html" style="color: #12C;">Cam's Pizzeria</a>
+            <p style="font-size: 0.9em; font-style: italic;">Who wants a performant pizza?</p>
           </li>
         </ul>
       </div>
 
-      <footer style="max-width: 45em; margin: 0 auto; padding: 0 .5em; border-top: 1px solid #ccc;">
+      <footer style="max-width: 45em; margin: 0 auto; padding: 0 0.5em; border-top: 1px solid #ccc;">
         <p>&copy; Web Performance 2014 <span id="crp-stats" style="float: right; font-style: italic;"></span></p>
       </footer>
     </div>
@@ -159,7 +159,21 @@ b=!0;break a}}b=!1}b&&(Ba=!0)}Ud()||Ba||!Ed(new Od(1E4))||(J(36),Ba=!0);(O.gaplu
 
 </script>
     <script async>
-function logCRP(){var a=window.performance.timing,b=a.domContentLoadedEventStart-a.domLoading,c=a.domComplete-a.domLoading;document.getElementById("crp-stats").textContent="DCL: "+b+"ms, onload: "+c+"ms"}window.addEventListener("load",function(a){logCRP()});
+// Measuring the Critical Rendering Path with Navigation Timing
+// https://developers.google.com/web/fundamentals/performance/critical-rendering-path/measure-crp
+
+function logCRP() {
+  var t = window.performance.timing,
+    dcl = t.domContentLoadedEventStart - t.domLoading,
+    complete = t.domComplete - t.domLoading;
+  var stats = document.getElementById("crp-stats");
+  stats.textContent = 'DCL: ' + dcl + 'ms, onload: ' + complete + 'ms';
+}
+
+window.addEventListener("load", function(event) {
+  logCRP();
+});
+
 </script>
   </body>
 </html>

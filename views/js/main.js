@@ -485,6 +485,16 @@ function logAverageFrame(times) {   // times is the array of User Timing measure
 
 // The following code for sliding background pizzas was pulled from Ilya's demo found at:
 // https://www.igvita.com/slides/2012/devtools-tips-and-tricks/jank-demo.html
+//
+
+function precalculatePhases() {
+
+  var phases = [];
+  for(var i = 0; i < 5; i++) {
+    phases.push(100 * Math.sin((document.body.scrollTop / 1250) + i));
+  }
+  return phases;
+}
 
 // Moves the sliding background pizzas based on scroll position
 function updatePositions() {
@@ -494,14 +504,11 @@ function updatePositions() {
   var items = document.querySelectorAll('.mover');
 
   // precalculate phases since there are only 5 distinct values
-  var phases = [];
-  for(var i = 0; i < 5; i++) {
-    phases.push(Math.sin((document.body.scrollTop / 1250) + i));
-  }
+  var phases = precalculatePhases();
   for (var i = 0; i < items.length; i++) {
     //var phase = Math.sin((document.body.scrollTop / 1250) + (i % 5));
     //items[i].style.left = items[i].basicLeft + 100 * phases[i % 5] + 'px';
-    var translateX = items[i].basicLeft + 100 * phases[i % 5] + 'px';
+    var translateX = phases[i % 5] + 'px';
     items[i].style.transform = "translateX(" + translateX + ") translateZ(0)";
   }
 
@@ -522,6 +529,7 @@ window.addEventListener('scroll', updatePositions);
 document.addEventListener('DOMContentLoaded', function() {
   var cols = 8;
   var s = 256;
+  var phases = precalculatePhases();
   for (var i = 0; i < 200; i++) {
     var elem = document.createElement('img');
     elem.className = 'mover';
@@ -529,8 +537,10 @@ document.addEventListener('DOMContentLoaded', function() {
     elem.style.height = "100px";
     elem.style.width = "73.333px";
     elem.basicLeft = (i % cols) * s;
+    elem.style.left = elem.basicLeft + phases[i % 5] + 'px';
     elem.style.top = (Math.floor(i / cols) * s) + 'px';
     document.querySelector("#movingPizzas1").appendChild(elem);
   }
-  updatePositions();
+  // We have already set basic style.left position so we do not need to call this on start
+  //updatePositions();
 });
